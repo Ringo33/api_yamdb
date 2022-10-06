@@ -88,18 +88,18 @@ class UserViewSet(viewsets.ModelViewSet):
         return User.objects.all()
 
 
-class UsernameViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UsersSerializer
-    permission_classes = [permissions.IsAdminUser,
-                          ]
-    lookup_field = 'username'
-
-    def get_queryset(self):
-        username = self.kwargs.get('username')
-        print(username)
-        # if search:
-        #     user_search = get_object_or_404(User, username=search)
-        #     queryset = User.objects.filter(id=user_search.id)
-        #     return queryset
-        return User.objects.all()
+# class UsernameViewSet(viewsets.ModelViewSet):
+#     queryset = User.objects.all()
+#     serializer_class = UsersSerializer
+#     permission_classes = [permissions.IsAdminUser,
+#                           ]
+#     lookup_field = 'username'
+#
+#     def get_queryset(self):
+#         username = self.kwargs.get('username')
+#         print(username)
+#         # if search:
+#         #     user_search = get_object_or_404(User, username=search)
+#         #     queryset = User.objects.filter(id=user_search.id)
+#         #     return queryset
+#         return User.objects.all()
